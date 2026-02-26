@@ -45,10 +45,37 @@ public class PalindromeCheckerApp {
 
         // Compare strings using equals()
         if (input.equals(reversed)) {
-
             System.out.println("Result: \"" + input + "\" IS a palindrome.");
         } else {
             System.out.println("Result: \"" + input + "\" is NOT a palindrome.");
         }
+
+        System.out.println("==============================================");
+        System.out.println("      USE CASE 4: Character Array Based Palindrome Check");
+        System.out.println("==============================================");
+
+        input = "radar";
+        System.out.println("Input String: " + input);
+
+        char[] chars = input.toCharArray();
+
+        int start = 0;
+
+        int end = chars.length - 1;
+
+        isPalindrome = true;
+
+        while (start < end) {
+            if (chars[start] != chars[end]) {
+                isPalindrome = false;
+                break;
+            }
+
+            start++;
+            end--;
+        }
+
+        // Display result
+        System.out.println("Is Palindrome?: " + isPalindrome);
     }
 }
