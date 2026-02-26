@@ -28,22 +28,18 @@ public class PalindromeCheckerApp {
         System.out.println("      USE CASE 3: Reverse String Palindrome Check");
         System.out.println("==============================================");
 
-        // Hardcoded input string
         input = "LEVEL";
 
-        // Empty string to store reversed value
         String reversed = "";
 
         System.out.println("Original String: " + input);
 
-        // Iterate from the last character to the first
         for (int i = input.length() - 1; i >= 0; i--) {
-            reversed = reversed + input.charAt(i); // string concatenation
+            reversed = reversed + input.charAt(i);
         }
 
         System.out.println("Reversed String: " + reversed);
 
-        // Compare strings using equals()
         if (input.equals(reversed)) {
             System.out.println("Result: \"" + input + "\" IS a palindrome.");
         } else {
@@ -75,7 +71,30 @@ public class PalindromeCheckerApp {
             end--;
         }
 
-        // Display result
+        System.out.println("Is Palindrome?: " + isPalindrome);
+
+        System.out.println("==============================================");
+        System.out.println("      USE CASE 5: Stack Based Palindrome Check");
+        System.out.println("==============================================");
+
+        input = "noon";
+        System.out.println("Input String: " + input);
+
+        java.util.Stack<Character> stack = new java.util.Stack<>();
+
+        for (char c : input.toCharArray()) {
+            stack.push(c);
+        }
+
+        isPalindrome = true;
+
+        for (char c : input.toCharArray()) {
+            if (c != stack.pop()) {
+                isPalindrome = false;
+                break;
+            }
+        }
+
         System.out.println("Is Palindrome?: " + isPalindrome);
     }
 }
